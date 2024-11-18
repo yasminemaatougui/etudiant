@@ -1,0 +1,1260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GestionEmployes</class>
+ <widget class="QDialog" name="GestionEmployes">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1035</width>
+    <height>628</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+    background-color: #4CAF50;   /* Green background */
+    color: white;                 /* White text */
+    border: none;                 /* No border */
+    padding: 10px 20px;           /* Padding around the text */
+    font-size: 16px;              /* Font size */
+    border-radius: 12px;         /* Rounded corners */
+    cursor: pointer;             /* Pointer cursor on hover */
+}
+
+QPushButton:hover {
+    background-color: #45a049;   /* Darker green when hovering */
+}
+
+QPushButton:pressed {
+    background-color: #3e8e41;   /* Even darker green when pressed */
+}
+</string>
+  </property>
+  <widget class="QFrame" name="frame_3">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>751</width>
+     <height>55</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame {
+    background-color: white;
+    width: 10px;
+    border: 2px solid lightblue;;
+    border-radius: 15px;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::NoFrame</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <item>
+     <widget class="QPushButton" name="pushButton_10">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Add Employe</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>List of Employe</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_11">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Best employee</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_12">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>ChatBox</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>90</y>
+     <width>761</width>
+     <height>531</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#stackedWidget {
+    background-color: white;
+    width: 10px;
+    border: 2px solid lightblue;;
+    border-radius: 15px;
+}
+ </string>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="page_3">
+    <widget class="QWidget" name="widget_10" native="true">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>325</width>
+       <height>431</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QWidget" name="widget_11" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLineEdit" name="lineEdit_7">
+           <property name="maximumSize">
+            <size>
+             <width>143</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	 color:deepskyblue;
+	font: 700 12pt &quot;Segoe UI&quot;;
+	
+	;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>First name</string>
+           </property>
+           <property name="frame">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="firstname">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>159</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#nameline_2 {
+	background-color: rgb(196, 255, 238);
+    border: 2px solid  #00a388;; /* Bordure rose */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 2px;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_12" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QLineEdit" name="lineEdit_8">
+           <property name="maximumSize">
+            <size>
+             <width>143</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	 color:deepskyblue;
+	font: 700 12pt &quot;Segoe UI&quot;;
+	
+	;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>name</string>
+           </property>
+           <property name="frame">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="name">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>159</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	 background-color: lightblue; /* Couleur de fond bleu clair */
+    border: 2px solid deepskyblue; /* Bordure de 2 pixels de couleur bleu foncé */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 2px;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_14" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QLineEdit" name="lineEdit_14">
+           <property name="maximumSize">
+            <size>
+             <width>126</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	 color:deepskyblue;
+	font: 700 12pt &quot;Segoe UI&quot;;
+	
+	;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Username</string>
+           </property>
+           <property name="frame">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="username">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>159</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	 background-color: lightblue; /* Couleur de fond bleu clair */
+    border: 2px solid deepskyblue; /* Bordure de 2 pixels de couleur bleu foncé */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 2px;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_16" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <item>
+          <widget class="QLineEdit" name="lineEdit_15">
+           <property name="maximumSize">
+            <size>
+             <width>143</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	 color:deepskyblue;
+	font: 700 12pt &quot;Segoe UI&quot;;
+	
+	;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Password</string>
+           </property>
+           <property name="frame">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="password">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>159</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	 background-color: lightblue; /* Couleur de fond bleu clair */
+    border: 2px solid deepskyblue; /* Bordure de 2 pixels de couleur bleu foncé */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 2px;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_13" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QLineEdit" name="lineEdit_9">
+           <property name="maximumSize">
+            <size>
+             <width>76</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	 color:deepskyblue;
+	font: 700 12pt &quot;Segoe UI&quot;;
+	
+	;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Email</string>
+           </property>
+           <property name="frame">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="email">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	 background-color: lightblue; /* Couleur de fond bleu clair */
+    border: 2px solid deepskyblue; /* Bordure de 2 pixels de couleur bleu foncé */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 2px;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_2" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLineEdit" name="lineEdit_10">
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	 color:deepskyblue;
+	font: 700 12pt &quot;Segoe UI&quot;;
+	
+	;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Adresse</string>
+           </property>
+           <property name="frame">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="adresse">
+           <property name="maximumSize">
+            <size>
+             <width>191</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#lineEdit_11 {
+	background-color: rgb(196, 255, 238);
+    border: 2px solid  #00a388;; /* Bordure rose */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 2px;
+}</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="Add_button_2">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>480</y>
+       <width>116</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Add_button_2 
+{QPushButton {
+    background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="widget_15" native="true">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>20</y>
+       <width>325</width>
+       <height>343</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QWidget" name="widget_22" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_18">
+         <item>
+          <widget class="QLineEdit" name="lineEdit_22">
+           <property name="maximumSize">
+            <size>
+             <width>143</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	 color:deepskyblue;
+	font: 700 12pt &quot;Segoe UI&quot;;
+	
+	;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Phone Number</string>
+           </property>
+           <property name="frame">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="tel">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>159</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	 background-color: lightblue; /* Couleur de fond bleu clair */
+    border: 2px solid deepskyblue; /* Bordure de 2 pixels de couleur bleu foncé */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 2px;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_23" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_19">
+         <item>
+          <widget class="QLineEdit" name="lineEdit_23">
+           <property name="maximumSize">
+            <size>
+             <width>143</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	 color:deepskyblue;
+	font: 700 12pt &quot;Segoe UI&quot;;
+	
+	;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Role</string>
+           </property>
+           <property name="frame">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="role">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>159</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	 background-color: lightblue; /* Couleur de fond bleu clair */
+    border: 2px solid deepskyblue; /* Bordure de 2 pixels de couleur bleu foncé */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 2px;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_24" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_20">
+         <item>
+          <widget class="QLineEdit" name="lineEdit_24">
+           <property name="maximumSize">
+            <size>
+             <width>126</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	 color:deepskyblue;
+	font: 700 12pt &quot;Segoe UI&quot;;
+	
+	;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Salaire</string>
+           </property>
+           <property name="frame">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="salaire">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>159</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	 background-color: lightblue; /* Couleur de fond bleu clair */
+    border: 2px solid deepskyblue; /* Bordure de 2 pixels de couleur bleu foncé */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 2px;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_25" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QLineEdit" name="lineEdit_25">
+           <property name="maximumSize">
+            <size>
+             <width>198</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	 color:deepskyblue;
+	font: 700 12pt &quot;Segoe UI&quot;;
+	
+	;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>DATE EMPLOYMENT</string>
+           </property>
+           <property name="frame">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="dateEdit"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_26" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_22"/>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_4">
+    <widget class="QTableView" name="tableView">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>701</width>
+       <height>281</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#tableView{
+background-color: white;
+    border: 2px solid  lightblue;;; /* Bordure rose */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 2px;
+}</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="deleteline">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>380</y>
+       <width>241</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#deleteline{
+background-color: rgb(196, 255, 238);
+    border: 2px solid lightblue;;; /* Bordure rose */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 2px;
+}</string>
+     </property>
+     <property name="placeholderText">
+      <string>Deleted id</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="delete_button_2">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>410</y>
+       <width>121</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#delete_button_2 {
+	
+	background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Delete</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="frame_2">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>30</y>
+       <width>231</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#frame_2{
+background-color: white;
+    border: 2px solid  lightblue;;; /* Bordure rose */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 2px;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_12">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../Downloads/Nouveau dossier/search.svg</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_13">
+        <property name="styleSheet">
+         <string notr="true">#lineEdit_13{
+
+background-color: white;
+    border:none;; /* Bordure rose */
+}</string>
+        </property>
+        <property name="placeholderText">
+         <string>Search</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QComboBox" name="tri">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>40</y>
+       <width>191</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/* Style for the ComboBox */
+QComboBox {
+    background-color: white;
+    border: 2px solidlightblue;;
+    border-radius: 10px;
+    padding: 2px;
+    min-width: 120px;
+}
+
+</string>
+     </property>
+     <property name="currentText">
+      <string>Par defaut</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>Par defaut</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>PRENOM</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>NOM</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="pdf">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>380</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#pdf{
+background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Export pdf</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="excel">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>440</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#excel{
+	background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}</string>
+     </property>
+     <property name="text">
+      <string>Export Excel</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page">
+    <widget class="QComboBox" name="comboBox">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>140</y>
+       <width>331</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="currentText">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditAbsence">
+     <property name="geometry">
+      <rect>
+       <x>212</x>
+       <y>200</y>
+       <width>191</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="showTopEmployeeButton">
+     <property name="geometry">
+      <rect>
+       <x>464</x>
+       <y>130</y>
+       <width>171</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */</string>
+     </property>
+     <property name="text">
+      <string>best employee</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QTextEdit" name="chatArea">
+       <property name="contextMenuPolicy">
+        <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="inputField"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="sendButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}
+</string>
+       </property>
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>231</width>
+     <height>611</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame {
+    background-color: white;
+    width: 10px;
+    border: 2px solid rgb(225,255,255);
+    border-radius: 15px;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::NoFrame</enum>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QWidget" name="widget_9" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>77</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>77</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">white</string>
+      </property>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>181</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../../../Downloads/WhatsApp_Image_2024-11-16_à_21.19.30_76d901a0-removebg-preview (1).png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget_8" native="true">
+      <property name="styleSheet">
+       <string notr="true">white</string>
+      </property>
+      <layout class="QFormLayout" name="formLayout_2">
+       <item row="0" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>employes</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>clients</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton_8">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Equipements</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>services</string>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton_6">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>commandes</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton_7">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: lightblue; /* Couleur de fond bleu clair */
+    color: blue; /* Couleur du texte bleu */
+    border: none; /* Supprime la bordure */
+    padding: 5px; /* Ajoute de l'espace autour du texte */
+    border-radius: 5px; /* Arrondit les coins */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>livraison</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
