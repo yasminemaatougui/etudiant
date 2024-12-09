@@ -521,14 +521,13 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">#Add_button_2 
-{QPushButton {
+      <string notr="true">
+#Add_button_2  {
     background-color: lightblue; /* Couleur de fond bleu clair */
     color: blue; /* Couleur du texte bleu */
     border: none; /* Supprime la bordure */
     padding: 5px; /* Ajoute de l'espace autour du texte */
     border-radius: 5px; /* Arrondit les coins */
-}
 }
 </string>
      </property>
@@ -750,7 +749,58 @@ QPushButton:pressed {
       </item>
       <item>
        <widget class="QWidget" name="widget_26" native="true">
-        <layout class="QHBoxLayout" name="horizontalLayout_22"/>
+        <layout class="QHBoxLayout" name="horizontalLayout_22">
+         <item>
+          <widget class="QLineEdit" name="lineEdit_11">
+           <property name="maximumSize">
+            <size>
+             <width>143</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	 color:deepskyblue;
+	font: 700 12pt &quot;Segoe UI&quot;;
+	
+	;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>ID</string>
+           </property>
+           <property name="frame">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="idemp">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>159</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	 background-color: lightblue; /* Couleur de fond bleu clair */
+    border: 2px solid deepskyblue; /* Bordure de 2 pixels de couleur bleu foncé */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 2px;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
      </layout>

@@ -24,6 +24,7 @@
 #include <QtCharts>
 
 #include "employer.h"
+#include "arduino.h"
 
 namespace Ui {
 class GestionEmployes;
@@ -51,12 +52,17 @@ private slots:
     void displayTopEmployee();
     void on_showTopEmployeeButton_clicked();
     void sendMessage(); // Nouvelle méthode pour envoyer un message
+    void update_label();
 
 private:
     Ui::GestionEmployes *ui;
     employer emp;
     QComboBox *comboBox;
     QString currentUser; // Pour stocker le nom de l'utilisateur courant
+    QByteArray data;
+    Arduino A;
+    /* QSqlDatabase db;  // Objet pour gérer la connexion à la base de données
+};*/
 
     // Méthodes ajoutées
     void loadMessages(); // Pour charger les messages depuis la base de données

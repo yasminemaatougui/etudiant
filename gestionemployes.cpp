@@ -38,6 +38,16 @@ GestionEmployes::GestionEmployes(QWidget *parent) :
         connect(ui->tri, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &GestionEmployes::trierTableView);
         connect(ui->pdf, &QPushButton::clicked, this, &GestionEmployes::exporterEnPDF);
         connect(ui->excel,&QPushButton::clicked, this, &GestionEmployes::exporterEnExcel);
+        int ret=A.connect_arduino(); // lancer la connexion à arduino
+        switch(ret){
+        case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+            break;
+        case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+            break;
+        case(-1):qDebug() << "arduino is not available";
+        }
+        QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
+
 }
 
 GestionEmployes::~GestionEmployes()
@@ -54,11 +64,11 @@ void GestionEmployes::on_Add_button_2_clicked()
    QString role = ui->role->text();
    QString username = ui->username->text();
    QString password = ui->password->text();
-   //int id = ui->idemp->text().toInt();
+   QString id = ui->idemp->text();
    int tel = ui->tel->text().toInt();
    float salaire = ui->salaire->text().toFloat();
    QDate date = ui->dateEdit->date();
-   employer emp(firstname, name, username, password, adresse, email, role, date, tel, salaire);
+   employer emp(id,firstname, name, username, password, adresse, email, role, date, tel, salaire);
    bool test = emp.add();
 
        if (test) // If query executed successfully
@@ -80,7 +90,7 @@ void GestionEmployes::on_Add_button_2_clicked()
 
 void GestionEmployes::on_delete_button_2_clicked()
 {
-    int id = ui->deleteline->text().toInt();
+    QString id = ui->deleteline->text();
            bool test = emp.supprimer(id);
 
            if (test) {
@@ -383,7 +393,12 @@ void GestionEmployes::sendMessage() {
     }
 }
 void GestionEmployes::loadMessages() {
-    QSqlQuery query("SELECT USERNAME, MESSAGE FROM MESSAGES");
+    QSqlDatabase db = QSqlDatabase::database();
+    if (!db.isOpen()) {
+        qDebug() << "Erreur : La connexion à la base de données n'est pas ouverte.";
+        return;
+    }
+    QSqlQuery query("SELECT USERNAME, MESSAGE FROM MESSAGES ");
 
     if (!query.exec()) {
         qDebug() << "Erreur lors de la récupération des messages:" << query.lastError().text();
@@ -391,11 +406,13 @@ void GestionEmployes::loadMessages() {
     }
 
     ui->chatArea->clear(); // Vider la zone de chat avant de charger les nouveaux messages
+    qDebug() << "Messages récupérés avec succès.";
 
     while (query.next()) {
         QString username = query.value(0).toString();
         QString message = query.value(1).toString();
         ui->chatArea->append(username + ": " + message);
+        qDebug() << "Message trouvé:" << username + ": " + message;
     }
 }
 
@@ -409,3 +426,28 @@ void GestionEmployes::saveMessage(const QString &username, const QString &messag
         qDebug() << "Erreur lors de l'enregistrement du message:" << query.lastError().text();
     }
 }
+void GestionEmployes::update_label()
+{
+    QByteArray data = A.read_from_arduino();
+    QString receivedData = QString::fromUtf8(data);
+    if (!receivedData.isEmpty()) {
+          qDebug()  << receivedData;
+        QSqlQuery query;
+        query.prepare("SELECT * FROM EMPLOYES WHERE IDEMPLOYE = :identifiant");
+        query.bindValue(":identifiant", receivedData);
+        if (query.exec() && query.next()) {
+            QString count = query.value(1).toString();
+            qDebug()  << count;
+            if (!count.isEmpty()) {
+                A.write_to_arduino("4");
+                query.prepare("UPDATE EMPLOYES SET DATE_POINTAGE = CURRENT_TIMESTAMP WHERE IDEMPLOYE = :identifiant");
+                query.bindValue(":identifiant", receivedData);
+                query.exec();
+            } else {
+                A.write_to_arduino("5");
+                qDebug() << "Identifiant non trouvé dans la base de données :" << receivedData;
+            }
+        }
+    }
+}
+

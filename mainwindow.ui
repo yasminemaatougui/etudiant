@@ -13,18 +13,46 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #AEC6CF; /* Fond bleu pastel */
+}
+
+QPushButton {
+    background-color: #5A9BD3; /* Fond bleu plus foncé pour les boutons */
+    color: white; /* Texte en blanc pour plus de contraste */
+    border-radius: 5px; /* Coins arrondis (facultatif) */
+    padding: 5px 10px; /* Espacement intérieur */
+}
+
+QPushButton:hover {
+    background-color: #488CBF; /* Couleur légèrement plus foncée au survol */
+}
+
+QPushButton:pressed {
+    background-color: #34699A; /* Couleur encore plus foncée quand le bouton est pressé */
+}
+</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>50</x>
       <y>50</y>
-      <width>91</width>
+      <width>141</width>
       <height>51</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Script MT Bold</family>
+      <pointsize>11</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="text">
-     <string>username</string>
+     <string>USERNAME</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -36,15 +64,22 @@
       <height>51</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Script MT Bold</family>
+      <pointsize>11</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="text">
-     <string>password</string>
+     <string>PASSWORD</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="A">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>51</y>
+      <x>220</x>
+      <y>60</y>
       <width>221</width>
       <height>41</height>
      </rect>
@@ -53,7 +88,7 @@
    <widget class="QLineEdit" name="B">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>220</x>
       <y>120</y>
       <width>221</width>
       <height>41</height>
@@ -63,11 +98,17 @@
    <widget class="QPushButton" name="login">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>260</y>
+      <x>140</x>
+      <y>400</y>
       <width>131</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Script MT Bold</family>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>login</string>
@@ -76,11 +117,17 @@
    <widget class="QPushButton" name="cancel">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>260</y>
+      <x>530</x>
+      <y>400</y>
       <width>131</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Script MT Bold</family>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>cancel</string>

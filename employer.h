@@ -24,17 +24,17 @@
 class employer
 {
 private:
-    QString prenom ,nom , username , password , adresse , email ,role;
+    QString prenom ,nom , username , password , adresse , email ,role , idemp;
     QDate dateEmbauche ;
-    int tel , idemp ;
+    int tel  ;
     float salaire ;
 public:
     employer();
-    employer(const QString& prenom, const QString& nom, const QString& username, const QString& password,
+    employer(const QString& idemp, const QString& prenom, const QString& nom, const QString& username, const QString& password,
                 const QString& adresse, const QString& email, const QString& role,
                 const QDate& dateEmbauche, int tel, float salaire);
     bool add();
-    bool supprimer(int code);
+    bool supprimer(QString code);
     QSqlTableModel* afficher();
     bool meuilleurEmployes(int presence);
 signals:

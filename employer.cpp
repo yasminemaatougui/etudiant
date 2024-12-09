@@ -9,10 +9,11 @@ employer::employer()
 }
 
 
-employer::employer(const QString& prenom, const QString& nom, const QString& username, const QString& password,
+employer::employer(const QString& idemp, const QString& prenom, const QString& nom, const QString& username, const QString& password,
                    const QString& adresse, const QString& email, const QString& role,
                    const QDate& dateEmbauche, int tel, float salaire)
 {
+    this->idemp =idemp;
     this->prenom = prenom;
     this->nom = nom;
     this->username = username;
@@ -32,19 +33,18 @@ bool employer::add()
     QSqlQuery query;
     // Convert numeric fields to QString
         QString salaireConvertir = QString::number(salaire, 'f', 2);
-        QString idconvertit = QString::number(idemp);
         QString telconv = QString::number(tel);
         // Convert the date to a string format compatible with TO_DATE
         QString dateString = dateEmbauche.toString("dd-MM-yyyy");
 
     query.prepare("INSERT INTO EMPLOYES ( ADRESSE, DATE_AMBAUCHE, ROLE,  SALAIRE, EMAIL, NOM,  PASSWORD, PRENOMEMPLOYE, TEL, USERNAME, IDEMPLOYE )  "
-                  "VALUES (:adresse, TO_DATE(:dateEmbauche, 'DD-MM-YYYY'), :role, :salaire,:email, :nom,:password, :prenom,:tel,:username,IDEMPLOYE.NEXTVAL )");
+                  "VALUES (:adresse, TO_DATE(:dateEmbauche, 'DD-MM-YYYY'), :role, :salaire,:email, :nom,:password, :prenom,:tel,:username,:idemp )");
 
     // Bind the values from the Employer object
     query.bindValue(":adresse", adresse);
     query.bindValue(":dateEmbauche", dateString);  // Ensure date format
     query.bindValue(":email", email);
-    query.bindValue(":idemp", idconvertit);
+    query.bindValue(":idemp", idemp);
     query.bindValue(":nom", nom);
     query.bindValue(":password",password);
     query.bindValue(":prenom", prenom);
@@ -65,10 +65,9 @@ bool employer::add()
         return false;
     }
 }
-bool employer::supprimer(int code) {
+bool employer::supprimer(QString code) {
     QSqlQuery query;
-
-    query.prepare("DELETE FROM EMPLOYES WHERE IDEMPLOYE = :id");
+    query.prepare("DELETE FROM EMPLOYES WHERE IDEMPLOYE ");
     query.bindValue(":id", code);  // Bind the integer directly
 
     return query.exec();
@@ -101,6 +100,7 @@ QSqlTableModel* employer::afficher() {
     model->setHeaderData(9, Qt::Horizontal, QObject::tr("DATE AMBAUCHE"));
     model->setHeaderData(10, Qt::Horizontal, QObject::tr("ADRESSE"));
     model->setHeaderData(11, Qt::Horizontal, QObject::tr("PRESENCE"));
+    model->setHeaderData(12, Qt::Horizontal, QObject::tr("DATE POINTAGE"));
 
 
     return model;
